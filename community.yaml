@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: service-community
+  cloud:
+    consul:
+      discovery:
+        register: true
+      host: ${CONSUL_HOST:lol}
+      port: ${CONSUL_PORT:8500}
+      ribbon:
+        enabled: false
+  datasource:
+    url: jdbc:mysql://mysql_database_community:3306/your_database
+    username: your_user
+    password: your_user_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+jwt:
+  public.key: classpath:app.pub
+server:
+  port: 8082
+
